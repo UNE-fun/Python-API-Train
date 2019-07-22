@@ -2,9 +2,13 @@ from abc import ABCMeta, abstractmethod
 from injector import Injector, inject
 from flask import jsonify, Flask, url_for, request, Response, make_response
 import secrets
-from ..model import encrypter
 import logging
 from http import HTTPStatus
+
+#../modelではエラーになるのでパスを加える
+import sys
+sys.path.append('./model')
+import encrypter
 
 # userid と passwordは固定
 USERID = 'cloud-fun'
